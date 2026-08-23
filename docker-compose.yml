@@ -1,0 +1,8 @@
+services:
+  transferencias-svc:
+    build: .
+    image: duoc/jv0101-caso04-transferencias:1.0.0
+    container_name: caso04-transferencias-svc
+    ports:
+      - "${PORT:-8080}:8080"
+    restart: unless-stopped
