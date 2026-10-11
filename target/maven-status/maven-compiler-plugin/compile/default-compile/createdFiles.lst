@@ -1,6 +1,5 @@
-cl\duoc\jv0101\caso04\transferencias\repository\TransferenciaRepository.class
-cl\duoc\jv0101\caso04\transferencias\config\OpenApiConfig.class
-cl\duoc\jv0101\caso04\transferencias\controller\TransferenciaController.class
-cl\duoc\jv0101\caso04\transferencias\model\Transferencia.class
-cl\duoc\jv0101\caso04\transferencias\TransferenciaApplication.class
-cl\duoc\jv0101\caso04\transferencias\service\TransferenciaService.class
+cl\novabank\transferencias\model\Transferencia.class
+cl\novabank\transferencias\controller\TransferenciaController.class
+cl\novabank\transferencias\repository\TransferenciaRepository.class
+cl\novabank\transferencias\service\TransferenciaService.class
+cl\novabank\transferencias\TransferenciasApplication.class

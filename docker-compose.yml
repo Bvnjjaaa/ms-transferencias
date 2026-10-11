@@ -1,8 +1,8 @@
 services:
-  transferencias-svc:
+  ms-transferencias:
     build: .
-    image: duoc/jv0101-caso04-transferencias:1.0.0
-    container_name: caso04-transferencias-svc
+    image: novabank/ms-transferencias:1.0.0
+    container_name: ms-transferencias
     ports:
-      - "${PORT:-8080}:8080"
+      - "${PORT:-8083}:8083"
     restart: unless-stopped
