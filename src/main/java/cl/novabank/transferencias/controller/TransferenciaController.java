@@ -2,6 +2,9 @@ package cl.novabank.transferencias.controller;
 
 import cl.novabank.transferencias.model.Transferencia;
 import cl.novabank.transferencias.service.TransferenciaService;
+import jakarta.validation.Valid;
+import jakarta.validation.constraints.NotBlank;
+import jakarta.validation.constraints.Size;
 import java.util.List;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -25,7 +28,7 @@ public class TransferenciaController {
     }
 
     @PostMapping
-    public ResponseEntity<Transferencia> realizarTransferencia(@RequestBody Transferencia transferencia) {
+    public ResponseEntity<Transferencia> realizarTransferencia(@Valid @RequestBody Transferencia transferencia) {
         Transferencia creada = transferenciaService.registrarTransferencia(transferencia);
         return ResponseEntity.status(HttpStatus.CREATED).body(creada);
     }
@@ -54,7 +57,7 @@ public class TransferenciaController {
 
     @PutMapping("/{id}/estado")
     public ResponseEntity<Transferencia> actualizarEstado(@PathVariable Long id,
-                                                          @RequestParam String estado) {
+                                                          @NotBlank @Size(max = 255) @RequestParam String estado) {
         return transferenciaService.actualizarEstado(id, estado)
                 .map(ResponseEntity::ok)
                 .orElseGet(() -> ResponseEntity.notFound().build());

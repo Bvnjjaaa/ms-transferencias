@@ -1,8 +1,6 @@
 services:
-  ms-transferencias:
+  transferencias:
     build: .
-    image: novabank/ms-transferencias:1.0.0
-    container_name: ms-transferencias
+    image: novabank/transferencias:local
     ports:
-      - "${PORT:-8083}:8083"
-    restart: unless-stopped
+      - "127.0.0.1:${PORT:-8083}:8080"
